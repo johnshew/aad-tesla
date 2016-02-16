@@ -10,8 +10,10 @@
     <body>
       <div id="output">></div>
       <script>
-          var hash = location.hash ? location.hash : "No hash";
-          document.getElementById("output").innerHTML = hash;
+          var message = (location.hash)
+            ? "Redirected from Azure AAD.<br><br> The value of location.hash is:<br><br>" + location.hash
+            : "No hash - this page is intended by called from test1.html through the Azure AD login redirect.";
+          document.getElementById("output").innerHTML = message;
       </script>
     </body>
 </html>
