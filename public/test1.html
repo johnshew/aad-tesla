@@ -15,7 +15,7 @@
     <script>
         function DoIt() {
             var clientId = "b8dd3290-662a-4f91-92b9-3e70fbabe04e";
-            var redirectUri = location.protocol + '//' + location.host + "/public/test2.html";
+            var redirectUri = location.protocol + '//' + location.host + location.path.substring(0,location.path.lastIndexOf('/')) + "/test2.html";
             var state = "no-state";
             var nonce = "simple-bad-nonce";
             var url = "https://login.microsoftonline.com/common/oauth2/authorize" +
