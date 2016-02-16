@@ -1,0 +1,29 @@
+{
+  "name": "aad-tesla",
+  "version": "1.0.0",
+  "description": "Testing Azure AD with the browser in a Tesla",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/johnshew/aad-tesla.git"
+  },
+  "keywords": [
+    "Azure",
+    "Active",
+    "Directory",
+    "AD",
+    "Tesla"
+  ],
+  "author": "johnshew@twitter.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/johnshew/aad-tesla/issues"
+  },
+  "homepage": "https://github.com/johnshew/aad-tesla",
+  "dependencies": {
+    "restify": "^4.0.4"
+  }
+}
