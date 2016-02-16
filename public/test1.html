@@ -11,9 +11,12 @@
 
 <body>
 
-    <button onclick="DoIt()"> Redirect </button> Login with Azure AD
+    <button onclick="DoLogin()"> Login Redirect </button> Login with Azure AD <br><br>
+    <button onclick="DoLogout()"> Logout Redirect </button> Logout of Azure AD - forces login screen <br>
+    
+    
     <script>
-        function DoIt() {
+        function DoLogin() {
             var clientId = "b8dd3290-662a-4f91-92b9-3e70fbabe04e";
             var redirectUri = location.protocol + '//' + location.host + location.pathname.substring(0,location.pathname.lastIndexOf('/')) + "/test2.html";
             var state = "no-state";
@@ -25,6 +28,11 @@
                     "&state=" + encodeURIComponent(state) +
                     "&nonce=" + encodeURIComponent(nonce);
 
+            window.location.href = url;
+        }
+        
+        function DoLogout() {
+             var url = "https://login.microsoftonline.com/common/oauth2/logout?post_logout_redirect_uri=" + encodeURI(window.location.href);
             window.location.href = url;
         }
     </script>
