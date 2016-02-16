@@ -10,6 +10,9 @@ Note the rapid response (typically a few seconds or less) on most browsers.
 
 Using the browser in the Tesla this same test takes more than a minute to complete.
 
-We would like to determine if this is a bug in the Tesla browser or something AAD is doing that is a problem.
+We would like to determine if this is a bug in the Tesla browser or if it something AAD is doing that is a problem for the Tesla browser.
+
+Any suggestions appreciated.
+
 
  
