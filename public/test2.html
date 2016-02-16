@@ -8,6 +8,10 @@
         <title></title>
     </head>
     <body>
-    
+      <div id="output">></div>
+      <script>
+          var hash = location.hash ? location.hash : "No hash";
+          document.getElementById("output").innerHTML = hash;
+      </script>
     </body>
 </html>

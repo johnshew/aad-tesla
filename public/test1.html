@@ -1,19 +1,33 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title></title>
-    </head>
-    <body>
-    
-        <button onclick="DoIt()">Do It</button>
-        <script>
-            function DoIt() {
-                alert("Working!");
-            }
-        </script>
-    </body>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+</head>
+
+<body>
+
+    <button onclick="DoIt()">Redirect</button> Do an AAD login.
+    <script>
+        function DoIt() {
+            var clientId = "b8dd3290-662a-4f91-92b9-3e70fbabe04e";
+            var redirectUri = location.protocol + '//' + location.host + "/public/test2.html";
+            var state = "no-state";
+            var nonce = "simple-bad-nonce";
+            var url = "https://login.microsoftonline.com/common/oauth2/authorize" +
+                    "?response_type=id_token" +
+                    "&client_id=" + encodeURIComponent(clientId) +
+                    "&redirect_uri=" + encodeURIComponent(redirectUri) +
+                    "&state=" + encodeURIComponent(state) +
+                    "&nonce=" + encodeURIComponent(nonce);
+
+            window.location.href = url;
+        }
+    </script>
+</body>
+
 </html>
