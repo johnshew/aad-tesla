@@ -11,11 +11,21 @@
 
 <body>
 
-    <button onclick="DoLogin()"> Login Redirect </button> Login with Azure AD <br><br>
-    <button onclick="DoLogout()"> Logout Redirect </button> Logout of Azure AD - forces login screen <br>
-    
-    
+    <div id='output'></div>
+    <button onclick="DoLogin()"> Login Redirect </button> Login with Azure AD
+    <br>
+    <br>
+    <button onclick="DoLogout()"> Logout Redirect </button> Logout of Azure AD - forces login screen
+    <br>
+
+
     <script>
+        var correlation ='xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+            var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+            return v.toString(16);
+        }); 
+        document.getElementById("output").innerHTML += "<p>Current time is " + (new Date(Date.now())).toISOString() + "</p><p>The client-request-id=" + correlation + "</p>";         
+
         function DoLogin() {
             var clientId = "b8dd3290-662a-4f91-92b9-3e70fbabe04e";
             var redirectUri = location.protocol + '//' + location.host + location.pathname.substring(0,location.pathname.lastIndexOf('/')) + "/test2.html";
@@ -25,9 +35,14 @@
                     "?response_type=id_token" +
                     "&client_id=" + encodeURIComponent(clientId) +
                     "&redirect_uri=" + encodeURIComponent(redirectUri) +
+                    "&client-request-id=" + encodeURIComponent(correlation) + 
                     "&state=" + encodeURIComponent(state) +
                     "&nonce=" + encodeURIComponent(nonce);
+                    
+                 
 
+            console.log(correlation);
+            console.log(url);
             window.location.href = url;
         }
         
