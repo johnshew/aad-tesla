@@ -31,7 +31,7 @@
 
         function DoLogin() {
             
-            var redirectUri = location.protocol + '//' + location.host + location.pathname.substring(0,location.pathname.lastIndexOf('/')) + "/test2.html";
+            var redirectUri = location.protocol + '//' + location.host + location.pathname.substring(0,location.pathname.lastIndexOf('/')) + "/redirected.html";
             var state = "no-state";
             var nonce = "simple-bad-nonce";
             var url = "https://login.microsoftonline.com/common/oauth2/authorize" +
