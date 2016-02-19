@@ -20,14 +20,17 @@
 
 
     <script>
+        var clientId = "b8dd3290-662a-4f91-92b9-3e70fbabe04e";
         var correlation ='xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
             var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
             return v.toString(16);
         }); 
-        document.getElementById("output").innerHTML += "<p>Current time is " + (new Date(Date.now())).toISOString() + "</p><p>The client-request-id=" + correlation + "</p>";         
+        document.getElementById("output").innerHTML += "<p>Current time is " + (new Date(Date.now())).toISOString() 
+        + "</p><p>client-id=" + clientId 
+        + "</p><p>client-request-id=" + correlation + "</p>";         
 
         function DoLogin() {
-            var clientId = "b8dd3290-662a-4f91-92b9-3e70fbabe04e";
+            
             var redirectUri = location.protocol + '//' + location.host + location.pathname.substring(0,location.pathname.lastIndexOf('/')) + "/test2.html";
             var state = "no-state";
             var nonce = "simple-bad-nonce";
@@ -38,9 +41,7 @@
                     "&client-request-id=" + encodeURIComponent(correlation) + 
                     "&state=" + encodeURIComponent(state) +
                     "&nonce=" + encodeURIComponent(nonce);
-                    
-                 
-
+                                   
             console.log(correlation);
             console.log(url);
             window.location.href = url;
