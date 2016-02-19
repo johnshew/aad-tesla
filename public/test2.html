@@ -11,8 +11,8 @@
       <div id="output">></div>
       <script>
           var message = (location.hash)
-            ? "Redirected from Azure AAD.<br><br> The value of location.hash is:<br><br>" + location.hash
-            : "No hash - this page is intended by called from test1.html through the Azure AD login redirect.";
+            ? "Redirected from oauth endpoint.<br><br> The value of location.hash is:<br><br>" + location.hash
+            : "No hash - this page is intended by called from other test through oauth redirect.";
           document.getElementById("output").innerHTML = message;
       </script>
     </body>
